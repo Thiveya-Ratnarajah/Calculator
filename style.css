@@ -1,0 +1,200 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #e2e1e1; /* Default light background */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Container */
+.container {
+    display: flex;
+}
+
+/* Calculator styling */
+.calculator {
+    width: 350px;
+    background-color: rgb(254, 173, 187); /* Light background color for light mode */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgb(135, 174, 219); /* Shadow for visual depth */
+    text-align: center;
+    position: relative;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for background and shadow */
+}
+
+/* Dark Mode Toggle Button styling */
+#dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: #6e9bc1; /* Default toggle button color */
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+#dark-mode-toggle:hover {
+    background-color: #577fa3; /* Darker color on hover */
+}
+
+/* Display Screen styling */
+.large-display {
+    width: 100%;
+    height: 90px;
+    font-size: 2.4rem;
+    color: #333;
+    background-color: rgb(244, 211, 217); /* Light background for display screen */
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: right;
+    margin-bottom: 20px;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+}
+
+/* Buttons Layout - 4 columns with 12px gaps */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* General Button Styling */
+button {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.3rem;
+    color: #333;
+    background-color: #d9d9d9; /* Light gray button color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease; /* Smooth transitions */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Shadow for visual effect */
+}
+
+button:hover {
+    background-color: #c2c2c2; /* Darker on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+}
+
+button:active {
+    background-color: #b0b0b0; /* Even darker when clicked */
+    transform: scale(0.98); /* Slight scaling effect on click */
+}
+
+/* Operator Button Styling - Fourth button in each row */
+button:nth-child(4n) {
+    background-color: #6597c0; /* Distinct color for operator buttons */
+    color: #fff;
+}
+
+button:nth-child(4n):hover {
+    background-color: #577fa3; /* Darker shade on hover */
+}
+
+/* Clear Button Styling */
+.clear {
+    grid-column: span 4; /* Clear button spans across all columns */
+    background-color: #ff5757; /* Red color for Clear button */
+    color: #fff;
+    font-weight: bold;
+}
+
+.clear:hover {
+    background-color: #e55353; /* Darker on hover */
+}
+
+.clear:active {
+    background-color: #c94949; /* Darkest shade when clicked */
+}
+
+/* Dark Mode Styling */
+
+/* Calculator dark mode styling */
+.dark-mode .calculator {
+    background-color: #333; /* Dark calculator background */
+    color: #f7f7f7;
+}
+
+/* Display screen dark mode styling */
+.dark-mode .large-display {
+    background-color: #444; /* Darker display screen background */
+    color: #f7f7f7; /* Light text color for contrast */
+}
+
+/* General button dark mode styling */
+.dark-mode button {
+    background-color: #555; /* Darker background for buttons */
+    color: #f7f7f7;
+}
+
+.dark-mode button:hover {
+    background-color: #6a6969; /* Darker gray on hover */
+}
+
+/* Clear button dark mode styling */
+.dark-mode .clear {
+    background-color: #f53434; /* Bright red for dark mode */
+}
+
+.dark-mode .clear:hover {
+    background-color: #e13030; /* Darker shade on hover */
+}
+
+.dark-mode .clear:active {
+    background-color: #cf3636; /* Darkest on click */
+}
+
+/* Dark mode toggle button color in dark mode */
+.dark-mode #dark-mode-toggle {
+    background-color: #f5a623;
+}
+
+.dark-mode #dark-mode-toggle:hover {
+    background-color: #d68e2c;
+}
+
+/* Operator button dark mode styling */
+.dark-mode :nth-child(4n) {
+    background-color: #6e9bc1;
+    color: #fff;
+}
+
+.dark-mode :nth-child(4n):hover {
+    background-color: #577fa3; /* Darker on hover */
+}
+
+/* History Section Styling */
+.history {
+    margin-top: 23px;
+    max-height: 250px;
+    overflow-y: auto; /* Enables scrolling if history exceeds max height */
+    border: 1px solid #ccc; /* Light border */
+    color: #2d2c2c; /* Text color */
+    padding: 10px;
+    display: none; /* Initially hidden */
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Dark mode styling for history section */
+.dark-mode .history {
+    color: black;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Dark Mode Toggle Button -->
+        <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+        <div class="container">
+            <div class="calculator">
+                <!-- Display Screen -->
+                <input type="text" class="large-display" disabled>
+    
+                <!-- Buttons Layout -->
+                <div class="buttons">
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button>÷</button>
+                    
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>×</button>
+                    
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>−</button>
+                    
+                    <button>0</button>
+                    <button>.</button>
+                    <button>=</button>
+                    <button>+</button>
+                    
+                    <!-- Clear Button -->
+                    <button class="clear">Clear</button>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div class="history" id="history"></div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
