@@ -1,12 +1,15 @@
+// Grab DOM elements
 let display = document.querySelector('.large-display');
 let buttons = document.querySelectorAll('button');
 let firstOperand = null;
 let currentOperator = null;
 let currentInput = "";
-const clickSound = new Audio("click.mp3");
-const history = document.getElementById("history");
+const clickSound = new Audio("click.mp3"); // Initialize click sound
 
-// Toggle Dark Mode
+// Load the click sound
+clickSound.load();  // Preload audio to avoid delays
+
+// Function to toggle dark mode
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
     let isDarkMode = document.body.classList.contains("dark-mode");
@@ -14,12 +17,14 @@ function toggleDarkMode() {
     document.getElementById("dark-mode-toggle").textContent = buttonText;
 }
 
-// Play click sound on button press
+// Function to play click sound on button press
 function playClickSound() {
-    clickSound.play();
+    clickSound.play().catch(error => {
+        console.error("Audio playback failed: ", error);
+    });
 }
 
-// Calculate the result based on the operator
+// Function to calculate the result based on the operator
 function calculateResult() {
     switch (currentOperator) {
         case '+':
@@ -38,10 +43,11 @@ function calculateResult() {
 // Handle number and operator buttons
 buttons.forEach(button => {
     button.addEventListener("click", () => {
-        playClickSound();
+        playClickSound();  // Play sound on button click
         let value = button.textContent;
 
         if (button.classList.contains("clear")) {
+            // Clear the display and reset
             display.value = "";
             firstOperand = null;
             currentOperator = null;
@@ -76,6 +82,7 @@ buttons.forEach(button => {
                     firstOperand = calculateResult();
                     display.value = firstOperand;
                 }
+
                 // Map the operators to lowercase
                 currentOperator = value === "÷" ? "/" :
                                   value === "×" ? "*" :
